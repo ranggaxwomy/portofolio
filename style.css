@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow: hidden;
+    touch-action: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #0a0e24 0%, #1a2342 50%, #2d3c74 100%);
+    position: relative;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 5s infinite ease-in-out;
+}
+
+.moon {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(201, 201, 201, 1) 100%);
+    box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.8);
+    top: 10%;
+    right: 10%;
+    z-index: 1;
+}
+
+.moon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(180, 180, 180, 0.3);
+    top: 30px;
+    left: 40px;
+}
+
+.moon::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(180, 180, 180, 0.2);
+    bottom: 40px;
+    right: 30px;
+}
+
+.cloud {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background: rgba(45, 45, 75, 0.4);
+    border-radius: 50px;
+    filter: blur(20px);
+    z-index: 1;
+    animation: float 30s infinite linear;
+}
+
+.constellation {
+    position: absolute;
+    z-index: 1;
+}
+
+.constellation-line {
+    stroke: rgba(255, 255, 255, 0.3);
+    stroke-width: 1;
+}
+
+.constellation-star {
+    fill: white;
+}
+
+.northern-lights {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(32, 196, 172, 0.1) 30%, 
+        rgba(94, 96, 206, 0.2) 60%, 
+        rgba(32, 196, 172, 0.1) 80%, 
+        rgba(0, 0, 0, 0) 100%);
+    filter: blur(20px);
+    animation: aurora 15s infinite ease-in-out;
+    z-index: 1;
+}
+
+/* Next Button Styles */
+.next-button {
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    margin-top: 30px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px;
+}
+
+.next-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.next-button:active {
+    transform: translateY(1px);
+}
+
+@keyframes gentle-glow {
+    0%, 100% { 
+        background: linear-gradient(to bottom, #0a0e24 0%, #1a2342 50%, #2d3c74 100%);
+    }
+    50% { 
+        background: linear-gradient(to bottom, #0c1028 0%, #1e2850 50%, #324385 100%);
+    }
+}
+
+.music-playing {
+    animation: gentle-glow 8s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 1; }
+}
+
+@keyframes float {
+    from { transform: translateX(-150%); }
+    to { transform: translateX(150vw); }
+}
+
+@keyframes aurora {
+    0%, 100% { 
+        opacity: 0.5;
+        transform: translateX(0);
+    }
+    25% { 
+        opacity: 0.7;
+        transform: translateX(-5%);
+    }
+    75% { 
+        opacity: 0.3;
+        transform: translateX(5%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .moon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .moon::after {
+        width: 15px;
+        height: 15px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .moon::before {
+        width: 20px;
+        height: 20px;
+        bottom: 20px;
+        right: 15px;
+    }
+
+    .next-button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+}

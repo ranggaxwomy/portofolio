@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gua Portofolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="moon"></div>
+    <div class="northern-lights"></div>
+    
+    <svg class="constellation" width="200" height="200" style="top: 20%; left: 15%;">
+        <g>
+            <line class="constellation-line" x1="50" y1="50" x2="100" y2="80" />
+            <line class="constellation-line" x1="100" y1="80" x2="150" y2="60" />
+            <line class="constellation-line" x1="100" y1="80" x2="120" y2="130" />
+            <circle class="constellation-star" cx="50" cy="50" r="2" />
+            <circle class="constellation-star" cx="100" cy="80" r="3" />
+            <circle class="constellation-star" cx="150" cy="60" r="2" />
+            <circle class="constellation-star" cx="120" cy="130" r="2" />
+        </g>
+    </svg>
+    
+    <svg class="constellation" width="180" height="180" style="top: 30%; right: 25%;">
+        <g>
+            <line class="constellation-line" x1="40" y1="40" x2="90" y2="30" />
+            <line class="constellation-line" x1="90" y1="30" x2="120" y2="70" />
+            <line class="constellation-line" x1="120" y1="70" x2="140" y2="30" />
+            <line class="constellation-line" x1="120" y1="70" x2="80" y2="100" />
+            <circle class="constellation-star" cx="40" cy="40" r="2" />
+            <circle class="constellation-star" cx="90" cy="30" r="1.5" />
+            <circle class="constellation-star" cx="120" cy="70" r="3" />
+            <circle class="constellation-star" cx="140" cy="30" r="2" />
+            <circle class="constellation-star" cx="80" cy="100" r="2" />
+        </g>
+    </svg>
+    
+    <div class="cloud" style="top: 15%; left: -300px; opacity: 0.3;"></div>
+    <div class="cloud" style="top: 40%; left: -300px; width: 250px; opacity: 0.2; animation-delay: -15s;"></div>
+    
+    <div class="container">
+        
+        <button class="next-button" id="musicButton">
+            Lanjut
+        </button>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="musik.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
